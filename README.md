@@ -1,6 +1,6 @@
 # Ma Bibliothèque Moderne 📖
 
-Bienvenue sur le dépôt de "Ma Bibliothèque Moderne", une application web conçue pour gérer votre votre propre bibliothèque personnelle.
+Bienvenue sur le dépôt de "Ma Bibliothèque Moderne", une application web conçue pour gérer votre  propre bibliothèque personnelle.
 
 ## Aperçu
 
