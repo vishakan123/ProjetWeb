@@ -1,4 +1,4 @@
-# Ma Bibliothèque Moderne 📖✨
+# Ma Bibliothèque Moderne 📖
 
 Bienvenue sur le dépôt de "Ma Bibliothèque Moderne", une application web conçue pour gérer votre votre propre bibliothèque personnelle.
 
