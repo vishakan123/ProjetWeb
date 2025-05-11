@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connexion</title>
+</head>
+<body>
+  <h1>Connexion</h1>
+  <form id="loginForm">
+    <label for="email">Email :</label>
+    <input type="email" id="email" required><br>
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" required><br>
+    <button type="submit">Se connecter</button>
+  </form>
+
+  <p id="message"></p>
+
+  <!-- Place le script ici, juste avant la balise </body> -->
+  <script>
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const res = await fetch('http://localhost:5000/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+        message.textContent = data.message;
+
+        if (res.ok) {
+          message.style.color = 'green';
+          localStorage.setItem('token', data.token);
+          console.log('Token stocké !');
+        } else {
+          message.style.color = 'red';
+        }
+      } catch (err) {
+        message.textContent = 'Erreur de connexion au serveur';
+        message.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* src/components/SearchBar.css */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative; /* Pour positionner l'icône ::after */
+}
+
+.search-bar input[type="text"] {
+  padding: 10px 15px;
+  padding-right: 40px; /* Espace pour l'icône */
+  border: 1px solid #dcdcdc;
+  border-radius: 20px; /* Bords arrondis */
+  font-size: 1em;
+  outline: none; /* Pas de contour au focus */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%; /* Prend toute la largeur */
+  box-sizing: border-box;
+}
+
+.search-bar input[type="text"]:focus {
+  border-color: #61dafb; /* Couleur React */
+  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.2); /* Ombre React */
+}
+
+/* Icône de loupe avec un pseudo-élément */
+.search-bar::after {
+   content: '🔍';
+   position: absolute;
+   right: 15px;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 1.2em;
+   color: #aaa;
+   pointer-events: none; /* Ne gêne pas le clic */
+}

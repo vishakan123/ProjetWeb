@@ -1,0 +1,73 @@
+/* src/pages/EditBookPage.css */
+
+.edit-book-page {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--bg-white); /* Variable */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.edit-book-page h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+  color: var(--text-color-dark); /* Variable */
+}
+
+.edit-book-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-book-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.9em;
+  color: var(--text-color-medium); /* Variable */
+}
+
+.edit-book-form-group input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color); /* Variable */
+  padding: 10px;
+  border-radius: var(--border-radius); /* Variable */
+  font-size: 1em;
+  font-family: var(--font-primary); /* Assure la police */
+}
+ .edit-book-form-group input[type="text"]:focus {
+   border-color: var(--color-primary); /* Variable */
+   box-shadow: 0 0 0 0.2rem var(--focus-shadow-color); /* Variable */
+   outline: none;
+}
+
+.edit-book-page .form-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Les boutons utilisent .btn de index.css */
+
+.edit-book-page .back-link {
+   display: block;
+   margin-top: 25px;
+   text-align: center;
+   font-size: 0.9em;
+   /* La couleur vient de .btn-link dans index.css */
+}
+
+@media (min-width: 576px) {
+  /* ... règles responsive inchangées ... */
+   .edit-book-page { margin: 30px auto; padding: 25px 30px; }
+   .edit-book-page h1 { font-size: 1.8em; }
+   .edit-book-form-group { flex-direction: row; align-items: center; margin-bottom: 20px; }
+   .edit-book-form-group label { margin-bottom: 0; width: 80px; text-align: right; margin-right: 15px; flex-shrink: 0; }
+   .edit-book-form-group input[type="text"] { width: auto; flex-grow: 1; }
+}

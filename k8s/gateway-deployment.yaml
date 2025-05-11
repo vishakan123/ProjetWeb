@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: progweb-gateway
+  labels:
+    app: progweb-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: progweb-gateway
+  template:
+    metadata:
+      labels:
+        app: progweb-gateway
+    spec:
+      containers:
+        - name: progweb-gateway
+          image: adsolt/progweb-gateway:latest
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: progweb-gateway
+spec:
+  type: NodePort
+  selector:
+    app: progweb-gateway
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 31131

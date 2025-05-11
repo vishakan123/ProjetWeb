@@ -1,0 +1,36 @@
+/* src/components/BookList.css */
+
+.book-list {
+  display: grid;
+  /* Commence avec 1 colonne par défaut (mobile first) */
+  grid-template-columns: 1fr;
+  gap: 20px; /* Espace vertical sur mobile */
+  padding: 15px 0;
+  width: 100%;
+}
+
+/* Style pour le message "Aucun livre trouvé" */
+.book-list > p {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  font-size: 1em;
+  color: #666; /* Ou utilise var(--text-color-light) */
+}
+
+/* --- Media Queries pour la grille --- */
+@media (min-width: 576px) { /* 2+ colonnes */
+  .book-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+   .book-list > p { font-size: 1.1em; }
+}
+
+@media (min-width: 992px) { /* 3+ colonnes */
+  .book-list {
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+   .book-list > p { padding: 40px; }
+}
